@@ -1,0 +1,3 @@
+LIBRARY mod_gzip INITINSTANCE
+EXPORTS
+	gzip_module

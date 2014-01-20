@@ -1,0 +1,28 @@
+                          Upload Information Template for Hobbes.nmsu.edu
+                          ===============================================
+
+        Archive Filename: mod_throttle_access_0_2.zip
+       Short Description: mod_throttle_access_0_2
+        Long Description: mod_Throttle_Access v0.2 (Apache 1.3.x)
+                          ported to OS/2.
+
+      Proposed directory
+           for placement: /pub/os2/apps/internet/www/server
+
+               Your name: Andrea Brancatelli
+           Email address: andrea@brancatelli.it
+    Program contact name: (same)
+   Program contact email: (same)
+             Program URL: http://www.fremen.org/apache/mod_throttle_access.html
+
+      Would you like the
+   contact email address
+    included in listings? yes
+
+Operating System/Version: Warp 3+ (suppose)
+ Additional requirements: Apache 1.3.x or higher
+
+                Replaces: (none)
+
+
+

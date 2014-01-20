@@ -1,0 +1,5 @@
+LoadModule throttle_access_module       libexec/mod_thro.dll
+
+<Location "/banner.jpg">
+     MaxConcurrentReqs 10
+</Location>

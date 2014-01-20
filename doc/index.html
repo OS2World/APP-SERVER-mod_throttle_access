@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<html>
+<head>
+<title>Access Throttling Module - Documentation</title>
+<link rev="made" href="mailto:cgilmore@fremen.org"> 
+</head>
+
+<body BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" 
+VLINK="#000080" ALINK="#FF0000">
+
+<p align="center"><IMG 
+SRC="http://www.apache.org/docs/images/sub.gif" 
+ALT="[APACHE DOCUMENTATION]">
+</p>
+
+<h1 align="center">Module mod_throttle_access</h1>
+
+<hr>
+
+<h2>Summary</h2>
+
+<p>
+My motivation for writing this module was to limit number of
+apache children that could simultaneously be serving the (nearly)
+same resource. The particular instance that spurred my need for
+this module was an article on the front page of <a
+href="http://slashdot.org/">/.</a> that referenced a very
+long-running, cpu-consuming user process. I wanted to be able to
+have the site as a whole continue to function adequately and
+defer requests for the resource once that resource had consumed a
+certain percentage of all the apache children available.
+</p>
+
+<h2>Download</h2>
+
+<p>
+Current version is <a 
+href="http://www.fremen.org/apache/mod_throttle_access-0.2.tar.gz">0.2</a>.
+</p>
+
+<h2>Compiling the Access Throttling Module into Apache</h2>
+
+<p>
+Presuming you are using apache 1.3.x, adding in a third-party
+module is fairly straightforward.
+</p>
+
+<p>
+<blockquote>
+<pre>
+# tar -xf apache_&lt;version&gt;.tar.gz
+# tar -xf mod_throttle_access.tar.gz
+# cd apache_&lt;version&gt;
+# ./configure --add-module=../mod_throttle_access.c ...
+# make
+# make install
+</pre>
+</blockquote>
+</p>
+
+<h2>Directives</h3>
+
+
+<ul>
+<li><a href="#MaxConcurrentReqs">MaxConcurrentReqs</a></li>
+</ul>
+
+<hr>
+
+<H2><A NAME="MaxConcurrentReqs">MaxConcurrentReqs directive</A></H2>
+
+<P>
+<A
+HREF="http://www.apache.org/docs/mod/directive-dict.html#Syntax"
+REL="Help"><STRONG>Syntax:</STRONG></A> MaxConcurrentReqs
+<EM>number</EM>
+<BR>
+<A
+HREF="http://www.apache.org/docs/mod/directive-dict.html#Context"
+REL="Help"><STRONG>Context:</STRONG></A> directory, .htaccess
+<BR>
+<A
+HREF="http://www.apache.org/docs/mod/directive-dict.html#Override"
+REL="Help"><STRONG>Override:</STRONG></A> Limit
+<BR>
+<A
+HREF="http://www.apache.org/docs/mod/directive-dict.html#Status"
+REL="Help"><STRONG>Status:</STRONG></A> Third Party
+<BR>
+<A
+HREF="http://www.apache.org/docs/mod/directive-dict.html#Module"
+REL="Help"><STRONG>Module:</STRONG></A> mod_throttle_access
+<BR>
+<A
+HREF="http://www.apache.org/docs/mod/directive-dict.html#Compatibility"
+REL="Help"><STRONG>Compatibility:</STRONG></A> Apache 1.3.5 and
+above.
+</P>
+
+<P>
+The MaxConcurrentRequs directive affects how many clients can
+concurrently request a given resource.
+</P>
+
+<P>
+Example:
+</P>
+
+<P>
+<BLOCKQUOTE><CODE>
+&lt;Location "/foo"&gt;<br>
+&lt;Limit PUT&gt;<br>
+MaxConcurrentReqs 10<br>
+&lt;/Limit&gt;<br>
+&lt;/Location&gt;
+</CODE></BLOCKQUOTE>
+</P>
+
+<P>
+Only 10 requests under the location "/foo" of method PUT can be
+processed at one time.
+</P>
+
+<hr>
+
+<p>
+<address><a href="mailto:cgilmore@fremen.org">Christian 
+Gilmore</a></address>
+</p>
+
+<p>
+<code>
+$Author: cgilmore $
+<br>
+$Date: 2000/05/09 20:57:47 $
+<br>
+$Id: index.html,v 1.4 2000/05/09 20:57:47 cgilmore Exp $
+</code>
+</p>
+
+<hr>
+<h3 align="center">Apache HTTP Server Version 1.3</h3>
+
+<p>
+<A HREF="http://www.apache.org/docs/mod/"><IMG 
+SRC="http://www.apache.org/docs/images/index.gif" 
+ALT="Index"></A>
+<A HREF="http://www.apache.org/docs/"><IMG 
+SRC="http://www.apache.org/docs/images/home.gif" 
+ALT="Home"></A>
+</p>
+
+
+</body>
+</html>

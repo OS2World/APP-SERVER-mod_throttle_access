@@ -1,0 +1,31 @@
+
+  This is the patched source for mod_throttle_access 0.2 for 
+  Apache 1.3.X with a binaries precompiled for platform OS/2.
+
+  The binaries were compiled by Andrea Brancatelli <andrea@brancatelli.it>
+  on a K6-2/400 platform running Aurora Warp Server for e-Business
+  using EMX gcc version 0.9d.
+
+  To use this binary you will need to have the EMX runtime installed. This can
+  be downloaded from ftp://hobbes.nmsu.edu/pub/os2/dev/emx/v0.9d/emxrt.zip
+
+  Quick guide to making it run
+  ============================
+  1) Copy the mod_thro.dll into your apache\libexec directory
+  2) Add the contents of httpd.conf.include into your httpd.conf (or 
+     whatever your apache-config is), according to your needs
+  3) run apache
+
+  This module doesn't add any signature indicating that it is loaded,
+  but if you enable the "/server-info" stats you will see that it is there
+  alive and good looking. Apache may also show an warning/
+  error telling you that the module has not been compiled using EAPI and 
+  thus might crash. In my environment it did not crash (as all the other 
+  non-EAPI modules i use). 
+
+  For some tips and other info on running mod_throttle_Access under Apache see 
+  the doc/index.html file included or look at:
+
+  http://www.fremen.org/apache/mod_throttle_access.html
+
+  Yes, this is always the same TXT. I will reuse it 'till it blanks :-)
